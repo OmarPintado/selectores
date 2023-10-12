@@ -8,18 +8,18 @@
       <div class="col">
         <label for="continente" class="form-label">Continente:</label>
         <select formControlName="region" name="continente" id="continente" class="form-control">
-          <option>--Seleccione Región--</option>
+          <option value="">--Seleccione Región--</option>
           <option *ngFor="let region of regions" [value]="region">{{region}}</option>
         </select>
       </div>
     </div>
     <!-- Países -->
-    <div class="row mb-3">
+    <div class="row mb-3" *ngIf="countriesByRegion.length > 0">
       <div class="col">
         <label for="pais" class="form-label">País:</label>
         <select formControlName="country" name="pais" id="pais" class="form-control">
-          <option>--Seleccione País--</option>
-          <option *ngFor="let region of regions" [value]="region">{{region}}</option>
+          <option value="">--Seleccione País--</option>
+          <option *ngFor="let pais of countriesByRegion" [value]="pais.name">{{pais.name}}</option>
         </select>
       </div>
     </div>
