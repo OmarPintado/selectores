@@ -19,7 +19,17 @@
         <label for="pais" class="form-label">País:</label>
         <select formControlName="country" name="pais" id="pais" class="form-control">
           <option value="">--Seleccione País--</option>
-          <option *ngFor="let pais of countriesByRegion" [value]="pais.name">{{pais.name}}</option>
+          <option *ngFor="let pais of countriesByRegion" [value]="pais.cca3">{{pais.name}}</option>
+        </select>
+      </div>
+    </div>
+    <!-- Fronteras -->
+    <div class="row mb-3" *ngIf="borders.length > 0">
+      <div class="col">
+        <label for="border" class="form-label">Frontera:</label>
+        <select formControlName="border" name="border" id="border" class="form-control">
+          <option value="">--Seleccione Frontera--</option>
+          <option *ngFor="let border of borders" [value]="border.cca3">{{border.name}}</option>
         </select>
       </div>
     </div>
